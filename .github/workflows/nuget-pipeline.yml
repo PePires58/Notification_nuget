@@ -15,7 +15,9 @@ jobs:
         with:
           dotnet-version: 3.1.x
       - name: Restore dependencies
-        run: dotnet restore root/src
+      - run: dotnet restore ../../src/Notification.Application/Notification.Application.csproj
+      - run: dotnet restore ../../src/Notification.Domain/Notification.Domain.csproj
+      - run: dotnet restore ../../src/Notification.Nuget/Notification.Nuget.csproj
       - name: Build
         run: dotnet build --no-restore
       - name: Test
