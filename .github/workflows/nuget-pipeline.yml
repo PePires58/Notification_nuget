@@ -1,18 +1,24 @@
-name: nuget pipieline
-on: 
+name: Nuget workflow
+
+on:
   push:
-    branches: [development, main]
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Setup .NET Core
-        run: echo "Initialing checkout step."
       - uses: actions/checkout@v2
-      - with: 
-        dotnet-version: 3.1.x
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
       - name: Restore dependencies
         run: dotnet restore
-      - name: Testing
-      run: dotnet test --no-build --verbosity normal
+      - name: Build
+        run: dotnet build --no-restore
+      - name: Test
+        run: dotnet test --no-build --verbosity normal
