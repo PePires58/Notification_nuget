@@ -28,7 +28,7 @@ jobs:
         run: dotnet build ${{ env.SOLUTION_PATH }} --no-restore --configuration Release
 
       - name: Test
-        run: dotnet test ${{ env.SOLUTION_PATH }} --no-build --verbosity normal
+        run: dotnet test ${{ env.SOLUTION_PATH }} --configuration Release --no-build --verbosity normal
 
       - name: Pack project
         run: dotnet pack ${{ env.SOLUTION_PATH }} --no-restore --no-build --configuration Release --include-symbols --output ${{ env.OUTPUT_DIRECTORY }}
