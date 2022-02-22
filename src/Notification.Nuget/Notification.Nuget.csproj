@@ -2,6 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <PackageId>NotificationService</PackageId>
+    <Authors>Pedro Henrique Pires</Authors>
+    <Company>Pedro Henrique Pires - Escola de software</Company>
+    <Product>Notification Service</Product>
+    <RepositoryType>GitHub</RepositoryType>
+    <NeutralLanguage>en</NeutralLanguage>
+    <RepositoryUrl>https://github.com/PePires58/Notification_nuget</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
