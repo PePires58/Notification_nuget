@@ -1,8 +1,13 @@
-name: Nuget workflow
-
+name: Nuget workflow prod
 on:
   push:
-    branches: [main, development]
+    tags:
+      - "v*"
+
+env:
+  SOLUTION_PATH: "src/"
+  OUTPUT_DIRECTORY: ${{ github.workspace }}\output
+  NUGET_SOURCE_URL: https://api.nuget.org/v3/index.json
 
 jobs:
   build-project:
@@ -10,13 +15,23 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: 3.1.x
+
       - name: Restore dependencies
-        run: dotnet restore src/
+        run: dotnet restore ${{ env.SOLUTION_PATH }}
+
       - name: Build
-        run: dotnet build src/ --no-restore
+        run: dotnet build ${{ env.SOLUTION_PATH }} --no-restore
+
       - name: Test
-        run: dotnet test src/ --no-build --verbosity normal
+        run: dotnet test ${{ env.SOLUTION_PATH }} --no-build --verbosity normal
+
+      - name: Pack project
+        run: dotnet pack ${{ env.SOLUTION_PATH }} --no-restore --no-build --configuration Release --include-symbols --output ${{ env.OUTPUT_DIRECTORY }}
+
+      - name: Push package
+        run: dotnet nuget push ${{ env.OUTPUT_DIRECTORY }}\*.nupkg -k ${{ secrets.nuget_password }}-s ${{ env.NUGET_SOURCE_URL }}
