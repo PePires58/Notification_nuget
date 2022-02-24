@@ -28,10 +28,11 @@ If you are having any problems, open an issue.
 Thanks a lot.
 
 Pedro Henrique Pires - Escola de software (software school)</Description>
-    <PackageLicenseExpression>https://licenses.nuget.org/MIT</PackageLicenseExpression>
+    <PackageLicenseExpression></PackageLicenseExpression>
     <PackageTags>Notification</PackageTags>
     <PackageProjectUrl>https://github.com/PePires58/Notification_nuget</PackageProjectUrl>
     <PackageIcon>nuget_icon.png</PackageIcon>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -41,6 +42,10 @@ Pedro Henrique Pires - Escola de software (software school)</Description>
 
   <ItemGroup>
     <None Include="..\images\nuget_icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\..\LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
