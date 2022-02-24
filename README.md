@@ -18,5 +18,4 @@ If you are having any problems, open an issue.
 
 Thanks a lot.
 
-Pedro Henrique Pires
-Escola de software (software school)
+Pedro Henrique Pires - Escola de software (software school)
