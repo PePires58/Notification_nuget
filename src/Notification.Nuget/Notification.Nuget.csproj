@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -27,12 +27,23 @@ If you are having any problems, open an issue.
 
 Thanks a lot.
 
-Pedro Henrique Pires Escola de software (software school)</Description>
+Pedro Henrique Pires - Escola de software (software school)</Description>
+    <PackageLicenseExpression>https://licenses.nuget.org/MIT</PackageLicenseExpression>
+    <PackageTags>Notification</PackageTags>
+    <PackageProjectUrl>https://github.com/PePires58/Notification_nuget</PackageProjectUrl>
+    <PackageIcon>nuget_icon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Notification.Application\Notification.Application.csproj" />
     <ProjectReference Include="..\Notification.Domain\Notification.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\images\nuget_icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

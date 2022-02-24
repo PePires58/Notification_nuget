@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -26,6 +26,9 @@ Pedro Henrique Pires Escola de software (software school)</Description>
     <Company>Pedro Henrique Pires - Escola de software</Company>
     <RepositoryUrl>https://github.com/PePires58/Notification_nuget</RepositoryUrl>
     <RepositoryType>GitHub</RepositoryType>
+    <PackageProjectUrl>https://github.com/PePires58/Notification_nuget</PackageProjectUrl>
+    <PackageTags>Notification</PackageTags>
+    <PackageLicenseExpression>https://licenses.nuget.org/MIT</PackageLicenseExpression>
   </PropertyGroup>
 
 </Project>

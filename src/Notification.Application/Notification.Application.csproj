@@ -25,6 +25,9 @@ Thanks a lot.
 Pedro Henrique Pires Escola de software (software school)</Description>
     <Company>Pedro Henrique Pires - Escola de software</Company>
     <Authors>Pedro Henrique Pires</Authors>
+    <PackageProjectUrl>https://github.com/PePires58/Notification_nuget</PackageProjectUrl>
+    <PackageLicenseExpression>https://licenses.nuget.org/MIT</PackageLicenseExpression>
+    <PackageTags>Notification</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
