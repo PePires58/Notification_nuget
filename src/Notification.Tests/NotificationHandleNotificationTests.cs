@@ -102,7 +102,7 @@ namespace Notification.Tests
         [TestMethod]
         public void HandleNotificationsWithEmptyMessagesOnList()
         {
-            Assert.ThrowsException<Exception>(() =>
+            Assert.ThrowsException<ArgumentException>(() =>
             {
                 INotificatorService.HandleNotifications(pNotifications: new List<Domain.Entities.Notification>()
                 {
@@ -110,7 +110,7 @@ namespace Notification.Tests
                 });
             }, "notification message cannot be empty or null");
 
-            Assert.ThrowsException<Exception>(() =>
+            Assert.ThrowsException<ArgumentException>(() =>
             {
                 INotificatorService.HandleNotifications(pMessages: new List<string>()
                 {

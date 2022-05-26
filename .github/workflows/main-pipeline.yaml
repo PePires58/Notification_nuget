@@ -1,13 +1,12 @@
-name: Nuget workflow prod
+name: Main branch workflow prod
 on:
   push:
-    tags:
-      - "v*"
+    branches:
+      - main
 
 env:
   SOLUTION_PATH: "src/"
   OUTPUT_DIRECTORY: ${{ github.workspace }}/output
-  NUGET_SOURCE_URL: https://api.nuget.org/v3/index.json
 
 jobs:
   build-project:
@@ -33,9 +32,3 @@ jobs:
       - name: Get Version
         id: version
         uses: battila7/get-version-action@v2
-
-      - name: Pack project
-        run: dotnet pack ${{ env.SOLUTION_PATH }}/Notification.sln --no-restore --no-build --configuration Release -p:PackageVersion=${{ steps.version.outputs.version-without-v }}  --output ${{ env.OUTPUT_DIRECTORY }}
-
-      - name: Push package
-        run: dotnet nuget push ${{ env.OUTPUT_DIRECTORY }}/**/*.nupkg -k ${{ secrets.nuget_password }} -s ${{ env.NUGET_SOURCE_URL }}

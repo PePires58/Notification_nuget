@@ -41,11 +41,11 @@ Pedro Henrique Pires - Escola de software (software school)</Description>
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\images\nuget_icon.png">
+    <None Include="..\..\LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
-    <None Include="..\..\LICENSE">
+    <None Include="..\images\nuget_icon.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>

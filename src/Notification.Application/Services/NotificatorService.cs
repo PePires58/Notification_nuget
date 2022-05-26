@@ -85,17 +85,17 @@ namespace Notification.Application.Services
         /// <summary>
         /// Handle a list of messages
         /// </summary>
-        /// <param name="pMessage">Notification messages</param>
-        public void HandleNotifications(List<string> pMessage)
+        /// <param name="pMessages">Notification messages</param>
+        public void HandleNotifications(List<string> pMessages)
         {
-            if (pMessage == null)
-                throw new ArgumentNullException("pMessage");
-            else if (pMessage.Any())
+            if (pMessages == null)
+                throw new ArgumentNullException("pMessages");
+            else if (pMessages.Any())
             {
-                pMessage.ForEach((message) =>
+                pMessages.ForEach((message) =>
                 {
                     if (string.IsNullOrEmpty(message))
-                        throw new Exception("notification message cannot be empty or null");
+                        throw new ArgumentException("notification message cannot be empty or null");
 
                     Notifications.Add(new Domain.Entities.Notification(message));
                 });
@@ -119,7 +119,7 @@ namespace Notification.Application.Services
                 pNotifications.ForEach((notification) =>
                 {
                     if (string.IsNullOrEmpty(notification.Message))
-                        throw new Exception("notification message cannot be empty or null");
+                        throw new ArgumentException("notification message cannot be empty or null");
 
                     Notifications.Add(notification);
                 });
