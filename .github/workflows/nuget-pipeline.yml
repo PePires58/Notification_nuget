@@ -27,7 +27,7 @@ jobs:
       - name: Build
         run: dotnet build ${{ env.SOLUTION_PATH }} --no-restore --configuration Release
 
-  Test project:
+  Test-project:
     runs-on: ubuntu-latest
     steps:
       - name: Test
@@ -37,7 +37,7 @@ jobs:
         id: version
         uses: battila7/get-version-action@v2
 
-  Deploy Nuget:
+  Deploy-Nuget:
     runs-on: ubuntu-latest
     steps:
       - name: Manual Approval for deploy nuget
