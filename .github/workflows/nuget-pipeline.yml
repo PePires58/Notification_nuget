@@ -10,7 +10,7 @@ env:
   NUGET_SOURCE_URL: https://api.nuget.org/v3/index.json
 
 jobs:
-  build-project:
+  Build-project:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,6 +27,9 @@ jobs:
       - name: Build
         run: dotnet build ${{ env.SOLUTION_PATH }} --no-restore --configuration Release
 
+  Test project:
+    runs-on: ubuntu-latest
+    steps:
       - name: Test
         run: dotnet test ${{ env.SOLUTION_PATH }} --configuration Release --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 
@@ -34,6 +37,14 @@ jobs:
         id: version
         uses: battila7/get-version-action@v2
 
+  Deploy Nuget:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Manual Approval for deploy nuget
+        uses: trstringer/manual-approval@v1
+        with:
+          secret: ${{ github.TOKEN }}
+          approvers: pepires58
       - name: Pack project
         run: dotnet pack ${{ env.SOLUTION_PATH }}/Notification.sln --no-restore --no-build --configuration Release -p:PackageVersion=${{ steps.version.outputs.version-without-v }}  --output ${{ env.OUTPUT_DIRECTORY }}
 

@@ -9,7 +9,7 @@ env:
   OUTPUT_DIRECTORY: ${{ github.workspace }}/output
 
 jobs:
-  build-project:
+  Build-project:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,6 +25,8 @@ jobs:
 
       - name: Build
         run: dotnet build ${{ env.SOLUTION_PATH }} --no-restore --configuration Release
-
+  Test project:
+    runs-on: ubuntu-latest
+    steps:
       - name: Test
         run: dotnet test ${{ env.SOLUTION_PATH }} --configuration Release --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
