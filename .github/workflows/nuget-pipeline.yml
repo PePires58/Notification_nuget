@@ -38,7 +38,7 @@ jobs:
         uses: trstringer/manual-approval@v1
         with:
           secret: ${{ github.TOKEN }}
-          approvers: pepires58
+          approvers: PePires58
       - name: Pack project
         run: dotnet pack ${{ env.SOLUTION_PATH }}/Notification.sln --no-restore --no-build --configuration Release -p:PackageVersion=${{ steps.version.outputs.version-without-v }}  --output ${{ env.OUTPUT_DIRECTORY }}
 
