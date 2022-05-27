@@ -14,9 +14,7 @@ Has notifications ?
 Any notifications (Func filter)
 For more informations check the interface: INotificationService
 
-To use, do not forget to register on IServiceCollections using the code bellow:
-
-services.addScoped&lt;INotificationService, NotificationService&gt;();
+To use, do not forget to register on IServiceCollections using interface and implementation: INotificationService and NotificationService
 
 If you are having any problems, open an issue.
 
