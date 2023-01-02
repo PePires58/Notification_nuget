@@ -44,8 +44,4 @@ Pedro Henrique Pires Escola de software (software school)</Description>
     <PackageReference Include="FluentValidation" Version="11.4.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Validators\" />
-  </ItemGroup>
-
 </Project>
