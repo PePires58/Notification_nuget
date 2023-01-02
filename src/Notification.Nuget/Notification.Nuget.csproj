@@ -19,6 +19,9 @@ Has notifications ?
 Any notifications (Func filter)
 For more informations check the interface: INotificationService
 
+Also, we have a ValidationService, which is a class that have methods and the structure to validate the objects using
+the library FluentValidation and the Notification structure.
+
 To use, do not forget to register on IServiceCollections using interface and implementation: INotificationService and NotificationService
 
 If you are having any problems, open an issue.
