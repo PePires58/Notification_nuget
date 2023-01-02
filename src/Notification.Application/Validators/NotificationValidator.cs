@@ -3,7 +3,6 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Notification.Application.Validators
 {
-    [ExcludeFromCodeCoverage]
     public class NotificationValidator : AbstractValidator<Domain.Entities.Notification>
     {
         public NotificationValidator()
