@@ -4,7 +4,7 @@ using Notification.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
 
-namespace Notification.Tests
+namespace Notification.Tests.Notification
 {
     [TestClass]
     public class NotificationHandleNotificationTests

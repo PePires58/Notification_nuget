@@ -62,7 +62,7 @@ namespace Notification.Application.Services
         {
             if (string.IsNullOrEmpty(pMessage))
             {
-                throw new ArgumentNullException("pMessage");
+                throw new ArgumentNullException(nameof(pMessage));
             }
 
             Notifications.Add(new Domain.Entities.Notification(pMessage));
@@ -75,7 +75,7 @@ namespace Notification.Application.Services
         public void HandleNotification(Domain.Entities.Notification pNotification)
         {
             if (pNotification == null)
-                throw new ArgumentNullException("pNotification");
+                throw new ArgumentNullException(nameof(pNotification));
             else if (string.IsNullOrEmpty(pNotification.Message))
                 throw new ArgumentException("notification message cannot be empty or null");
 
@@ -89,7 +89,7 @@ namespace Notification.Application.Services
         public void HandleNotifications(List<string> pMessages)
         {
             if (pMessages == null)
-                throw new ArgumentNullException("pMessages");
+                throw new ArgumentNullException(nameof(pMessages));
             else if (pMessages.Any())
             {
                 pMessages.ForEach((message) =>
@@ -113,7 +113,7 @@ namespace Notification.Application.Services
         public void HandleNotifications(List<Domain.Entities.Notification> pNotifications)
         {
             if (pNotifications == null)
-                throw new ArgumentNullException("pNotifications");
+                throw new ArgumentNullException(nameof(pNotifications));
             else if (pNotifications.Any())
             {
                 pNotifications.ForEach((notification) =>
