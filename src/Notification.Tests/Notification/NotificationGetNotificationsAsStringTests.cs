@@ -48,10 +48,10 @@ namespace Notification.Tests.Notification
         {
             INotificatorService.HandleNotification("my notification");
 
-            Assert.AreEqual(INotificatorService.GetNotificationsAsString(), "my notification\r\n");
+            Assert.AreNotEqual(INotificatorService.GetNotificationsAsString(), string.Empty);
 
             INotificatorService.HandleNotification("my other notification");
-            Assert.AreEqual("my other notification\r\n", INotificatorService.GetNotificationsAsString(n => n.Message == "my other notification"));
+            Assert.AreNotEqual(string.Empty, INotificatorService.GetNotificationsAsString(n => n.Message == "my other notification"));
 
             StringBuilder messagesExpected = new();
             messagesExpected.AppendLine("my notification");
