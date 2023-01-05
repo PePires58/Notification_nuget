@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace Notification.Application.Services
 {
@@ -134,5 +135,30 @@ namespace Notification.Application.Services
         /// Clear notifications
         /// </summary>
         public void ClearNotifications() => Notifications.Clear();
+
+        /// <summary>
+        /// Get notifications messages as string
+        /// </summary>
+        /// <returns>Notification messages as string</returns>
+        public string GetNotificationsAsString()
+            => GetNotificationsAsString((c) => true);
+
+        /// <summary>
+        /// Get notifications messages as string
+        /// </summary>
+        /// <param name="pFunc">Func to filter</param>
+        /// <returns>Notification messages as string</returns>
+        public string GetNotificationsAsString(Func<Domain.Entities.Notification, bool> pFunc)
+        {
+            StringBuilder messageToReturn = new();
+            List<Domain.Entities.Notification> notificationsFiltered = GetList(pFunc);
+
+            notificationsFiltered.ForEach((n) =>
+            {
+                messageToReturn.AppendLine(n.Message);
+            });
+
+            return messageToReturn.ToString();
+        }
     }
 }

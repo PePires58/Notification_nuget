@@ -30,28 +30,14 @@ Thanks a lot.
 
 Pedro Henrique Pires - Escola de software (software school)</Description>
     <PackageLicenseExpression></PackageLicenseExpression>
-    <PackageTags>Notification</PackageTags>
+    <PackageTags>Notification;nuget;</PackageTags>
     <PackageProjectUrl>https://github.com/PePires58/Notification_nuget</PackageProjectUrl>
     <PackageIcon>nuget_icon.png</PackageIcon>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>Notification Service - Nuget
-
-The goal of this nuget is share the notification service, the services available are:
-
-List notifications with our without filters
-Handle notification one by one or from a list
-Has notifications ?
-Any notifications (Func filter)
-For more informations check the interface: INotificationService
-
-To use, do not forget to register on IServiceCollections using interface and implementation: INotificationService and NotificationService
-
-If you are having any problems, open an issue.
-
-Thanks a lot.
-
-Pedro Henrique Pires - Escola de software (software school)</PackageReleaseNotes>
+    <PackageReleaseNotes>Notification - Nuget now contains the validation service, which is a service that will help you to validate your objects
+with fluent validation. The class has the structure to just use it.
+See also in the IValidationService interface</PackageReleaseNotes>
     <Title>Notification.Nuget</Title>
   </PropertyGroup>
 

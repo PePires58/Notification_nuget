@@ -41,7 +41,20 @@ namespace Notification.Domain.Interfaces
         /// <param name="pFunc">Func to filter</param>
         /// <returns>List of notifications</returns>
         List<Entities.Notification> GetList(Func<Entities.Notification, bool> pFunc);
-        
+
+        /// <summary>
+        /// Get notifications messages as string
+        /// </summary>
+        /// <returns>Notification messages as string</returns>
+        string GetNotificationsAsString();
+
+        /// <summary>
+        /// Get notifications messages as string
+        /// </summary>
+        /// <param name="pFunc">Func to filter</param>
+        /// <returns>Notification messages as string</returns>
+        string GetNotificationsAsString(Func<Entities.Notification, bool> pFunc);
+
         /// <summary>
         /// There is notifications ?
         /// </summary>
